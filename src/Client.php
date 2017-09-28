@@ -13,6 +13,7 @@ namespace Facturama;
 
 use Facturama\Exception\ModelException;
 use Facturama\Exception\RequestException;
+use Facturama\Exception\ResponseException;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
@@ -158,7 +159,7 @@ class Client
         } catch (GuzzleRequestException $e) {
             if ($e->hasResponse()) {
                 $content = trim($e->getResponse()->getBody()->getContents());
-                if (($object = json_decode($content)) && isset($object->Message)) {
+                if (($object = \GuzzleHttp\json_decode($content)) && isset($object->Message)) {
                     $modelException = null;
                     if (isset($object->ModelState)) {
                         $modelExceptionMessages = [];
@@ -180,6 +181,12 @@ class Client
             throw new RequestException($e->getMessage(), $e->getCode());
         }
 
-        return json_decode($content);
+        if (!($object = \GuzzleHttp\json_decode($content)) && JSON_ERROR_NONE !== ($jsonLastError = json_last_error())) {
+            throw new ResponseException(
+                sprintf('Response body could not be parsed since it doesn\'t contain a valid JSON structure, %s (%d): %s', json_last_error_msg(), $jsonLastError, $content)
+            );
+        }
+
+        return $object;
     }
 }
