@@ -1,0 +1,20 @@
+; top-most EditorConfig file
+root = true
+
+; Unix-style newlines
+[*]
+end_of_line = LF
+
+[*.{php,xml,yml,json}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+charset = utf-8
+insert_final_newline = true
+
+[*.{md}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+charset = utf-8
+insert_final_newline = true
