@@ -16,7 +16,11 @@ use Facturama\Exception\RequestException;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException as GuzzleRequestException;
+use GuzzleHttp\RequestOptions;
 
+/**
+ * @author Javier Spagnoletti <phansys@gmail.com>
+ */
 class Client
 {
     const VERSION = '1.0.0';
@@ -72,11 +76,13 @@ class Client
      */
     public function __construct($user = null, $password = null, array $config = [])
     {
-        $this->client = new GuzzleClient($config + ['headers' => ['User-Agent' => self::USER_AGENT]]);
-        $this->client->setDefaultOption('verify', false);
-        $this->client->setDefaultOption('auth', [$user, $password]);
-        $this->client->setDefaultOption('connect_timeout', 10);
-        $this->client->setDefaultOption('timeout', 60);
+        $this->client = new GuzzleClient($config + [
+            RequestOptions::HEADERS => ['User-Agent' => self::USER_AGENT],
+            RequestOptions::VERIFY => false,
+            RequestOptions::AUTH => [$user, $password],
+            RequestOptions::CONNECT_TIMEOUT => 10,
+            RequestOptions::TIMEOUT => 60,
+        ]);
     }
 
     /**
@@ -89,7 +95,7 @@ class Client
      */
     public function get($path, array $params = [])
     {
-        return $this->executeRequest('GET', $path, ['query' => $params]);
+        return $this->executeRequest('GET', $path, [RequestOptions::QUERY => $params]);
     }
 
     /**
@@ -103,7 +109,7 @@ class Client
      */
     public function post($path, array $body = null, array $params = [])
     {
-        return $this->executeRequest('POST', $path, ['json' => $body, 'query' => $params]);
+        return $this->executeRequest('POST', $path, [RequestOptions::JSON => $body, RequestOptions::QUERY => $params]);
     }
 
     /**
@@ -117,7 +123,7 @@ class Client
      */
     public function put($path, array $body = null, array $params = [])
     {
-        return $this->executeRequest('PUT', $path, ['json' => $body, 'query' => $params]);
+        return $this->executeRequest('PUT', $path, [RequestOptions::JSON => $body, RequestOptions::QUERY => $params]);
     }
 
     /**
@@ -130,7 +136,7 @@ class Client
      */
     public function delete($path, array $params = [])
     {
-        return $this->executeRequest('DELETE', $path, ['query' => $params]);
+        return $this->executeRequest('DELETE', $path, [RequestOptions::QUERY => $params]);
     }
 
     /**
@@ -147,8 +153,7 @@ class Client
     private function executeRequest($method, $url, array $options = [])
     {
         try {
-            $request = $this->client->createRequest($method, sprintf('%s/%s', self::API_URL, $url), $options);
-            $response = $this->client->send($request);
+            $response = $this->client->request($method, sprintf('%s/%s', self::API_URL, $url), $options);
             $content = trim($response->getBody()->getContents());
         } catch (GuzzleRequestException $e) {
             if ($e->hasResponse()) {
