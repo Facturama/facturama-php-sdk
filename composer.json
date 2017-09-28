@@ -1,0 +1,42 @@
+{
+    "name": "facturama/facturama-php-sdk",
+    "description": "Facturama PHP SDK",
+    "keywords": ["API", "PHP", "JSON", "Facturama"],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://www.api.facturama.com.mx/",
+    "support": {
+        "issues": "https://github.com/Facturama/facturama-php/issues"
+    },
+    "authors": [
+        {
+            "name": "Facturama",
+            "email": "dev@facturama.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "ext-curl": "*",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpmd/phpmd": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Facturama\\": ["src/"]
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Facturama\\Tests\\": "tests/" },
+        "files": [ "examples/credentials.php" ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
