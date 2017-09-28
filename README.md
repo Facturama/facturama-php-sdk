@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Facturama/facturama-php-sdk.svg?branch=master)](https://travis-ci.org/Facturama/facturama-php-sdk)
+
 # Facturama SDK PHP
 This library requires PHP 5.5 as minimum
 ## How do I install it?
