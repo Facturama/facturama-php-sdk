@@ -73,17 +73,21 @@ class Client
     /**
      * @param string $user
      * @param string $password
-     * @param array $config
+     * @param array $requestOptions
+     * @param null|ClientInterface $httpClient
      */
-    public function __construct($user = null, $password = null, array $config = [])
+    public function __construct($user = null, $password = null, array $requestOptions = [], ClientInterface $httpClient = null)
     {
-        $this->client = new GuzzleClient($config + [
+        if ($httpClient && $requestOptions) {
+            throw new \InvalidArgumentException('If argument 4 is provided, argument 5 must be omitted or passed with `null` as value');
+        }
+        $requestOptions += [
             RequestOptions::HEADERS => ['User-Agent' => self::USER_AGENT],
-            RequestOptions::VERIFY => false,
             RequestOptions::AUTH => [$user, $password],
             RequestOptions::CONNECT_TIMEOUT => 10,
             RequestOptions::TIMEOUT => 60,
-        ]);
+        ];
+        $this->client = $httpClient ?: new GuzzleClient($requestOptions);
     }
 
     /**
