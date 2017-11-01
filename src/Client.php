@@ -79,7 +79,7 @@ class Client
     public function __construct($user = null, $password = null, array $requestOptions = [], ClientInterface $httpClient = null)
     {
         if ($httpClient && $requestOptions) {
-            throw new \InvalidArgumentException('If argument 4 is provided, argument 5 must be omitted or passed with `null` as value');
+            throw new \InvalidArgumentException('If argument 3 is provided, argument 4 must be omitted or passed with `null` as value');
         }
         $requestOptions += [
             RequestOptions::HEADERS => ['User-Agent' => self::USER_AGENT],
