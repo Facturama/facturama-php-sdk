@@ -96,7 +96,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return \stdClass
+     * @return null|\stdClass
      */
     public function get($path, array $params = [])
     {
@@ -110,7 +110,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return \stdClass
+     * @return null|\stdClass
      */
     public function post($path, array $body = null, array $params = [])
     {
@@ -124,7 +124,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return \stdClass
+     * @return null|\stdClass
      */
     public function put($path, array $body = null, array $params = [])
     {
@@ -137,7 +137,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return \stdClass
+     * @return null|\stdClass
      */
     public function delete($path, array $params = [])
     {
@@ -153,7 +153,7 @@ class Client
      *
      * @throws \RuntimeException|\LogicException
      *
-     * @return \stdClass
+     * @return null|\stdClass
      */
     private function executeRequest($method, $url, array $options = [])
     {
@@ -163,7 +163,7 @@ class Client
         } catch (GuzzleRequestException $e) {
             if ($e->hasResponse()) {
                 $content = trim($e->getResponse()->getBody()->getContents());
-                if (($object = \GuzzleHttp\json_decode($content)) && isset($object->Message)) {
+                if ($content && ($object = \GuzzleHttp\json_decode($content)) && isset($object->Message)) {
                     $modelException = null;
                     if (isset($object->ModelState)) {
                         $modelExceptionMessages = [];
@@ -185,12 +185,16 @@ class Client
             throw new RequestException($e->getMessage(), $e->getCode());
         }
 
-        if (!($object = \GuzzleHttp\json_decode($content)) && JSON_ERROR_NONE !== ($jsonLastError = json_last_error())) {
-            throw new ResponseException(
-                sprintf('Response body could not be parsed since it doesn\'t contain a valid JSON structure, %s (%d): %s', json_last_error_msg(), $jsonLastError, $content)
-            );
+        if ($content) {
+            if (!($object = \GuzzleHttp\json_decode($content)) && JSON_ERROR_NONE !== ($jsonLastError = json_last_error())) {
+                throw new ResponseException(
+                    sprintf('Response body could not be parsed since it doesn\'t contain a valid JSON structure, %s (%d): %s', json_last_error_msg(), $jsonLastError, $content)
+                );
+            }
+
+            return $object;
         }
 
-        return $object;
+        return null;
     }
 }
