@@ -24,33 +24,48 @@ use GuzzleHttp\RequestOptions;
  */
 class Client
 {
-    const VERSION = '1.0.0';
+    const VERSION = '2.0.0';
     const API_URL = 'https://www.api.facturama.com.mx/api';
-    const USER_AGENT = 'Facturama-PHP-SDK-v1.0.0';
+    const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
 
-    const INVOICE_TYPE_INCOME = 'ingreso';
-    const INVOICE_TYPE_OUTCOME = 'egreso';
-    const INVOICE_TYPE_DELIVERY_NOTE = 'traslado';
+    /**
+     * @see https://www.api.facturama.com.mx/api/catalogs/CfdiTypes
+     */
+    const INVOICE_TYPE_INCOME = 'I';
+    const INVOICE_TYPE_INCOME_TAX_WITHHOLDING = 'I';
+    const INVOICE_TYPE_OUTCOME = 'E';
 
-    const PAYMENT_METHOD_CASH = 'Efectivo';
-    const PAYMENT_METHOD_NOMINAL_CHECK = 'Cheque';
-    const PAYMENT_METHOD_TRANSFER = 'Transferencia';
-    const PAYMENT_METHOD_CREDIT_CARD = 'Tarjetas de crédito';
-    const PAYMENT_METHOD_DIGITAL_WALLET = 'Monederos electrónicos';
-    const PAYMENT_METHOD_DIGITAL_MONEY = 'Dinero electrónico';
-    const PAYMENT_METHOD_DIGITAL_CARD = 'Tarjetas digitales';
-    const PAYMENT_METHOD_GROCERY_COUPON = 'Vales de despensa';
-    const PAYMENT_METHOD_HOLDING = 'Bienes';
-    const PAYMENT_METHOD_SERVICE = 'Servicio';
-    const PAYMENT_METHOD_THIRD_PARTY = 'Por cuenta de tercero';
-    const PAYMENT_METHOD_DATION = 'Dación en pago';
-    const PAYMENT_METHOD_SUBROGATION = 'Pago por subrogación';
-    const PAYMENT_METHOD_CONSIGNMENT = 'Pago por consignación';
-    const PAYMENT_METHOD_CONDONATION = 'Condonación';
-    const PAYMENT_METHOD_CANCELLATION = 'Cancelación';
-    const PAYMENT_METHOD_COMPENSATION = 'Compensación';
-    const PAYMENT_METHOD_DOESNT_APPLY = 'NA';
-    const PAYMENT_METHOD_OTHER = 'Otros';
+    /**
+     * @see https://www.api.facturama.com.mx/api/catalogs/PaymentMethods
+     */
+    const PAYMENT_METHOD_INITIAL = 'PIP';
+    const PAYMENT_METHOD_DEFERRED = 'PPD';
+    const PAYMENT_METHOD_SINGLE = 'PUE';
+
+    /**
+     * @see https://www.api.facturama.com.mx/api/catalogs/PaymentForms
+     */
+    const PAYMENT_FORM_CASH = '01';
+    const PAYMENT_FORM_NOMINAL_CHECK = '02';
+    const PAYMENT_FORM_TRANSFER = '03';
+    const PAYMENT_FORM_CREDIT_CARD = '04';
+    const PAYMENT_FORM_DIGITAL_WALLET = '05';
+    const PAYMENT_FORM_DIGITAL_MONEY = '06';
+    const PAYMENT_FORM_GROCERY_COUPON = '08';
+    const PAYMENT_FORM_DATION = '12';
+    const PAYMENT_FORM_SUBROGATION = '13';
+    const PAYMENT_FORM_CONSIGNMENT = '14';
+    const PAYMENT_FORM_CONDONATION = '15';
+    const PAYMENT_FORM_COMPENSATION = '17';
+    const PAYMENT_FORM_NOVATION = '23';
+    const PAYMENT_FORM_CONFUSION = '24';
+    const PAYMENT_FORM_DEBT_REMITTANCE = '25';
+    const PAYMENT_FORM_PRESCRIPTION = '26';
+    const PAYMENT_FORM_CREDITOR_SATISFACTION = '27';
+    const PAYMENT_FORM_DEBIT_CARD = '28';
+    const PAYMENT_FORM_SERVICE_CARD = '29';
+    const PAYMENT_FORM_INTERMEDIARIES = '31';
+    const PAYMENT_FORM_TO_BE_DEFINED = '99';
 
     const FILE_TYPE_PDF = 'pdf';
     const FILE_TYPE_HTML = 'html';
@@ -64,7 +79,7 @@ class Client
     const TAX_TYPE_FEDERAL_TRANSFERRED = 2;
     const TAX_TYPE_LOCAL_RETAINED = 3;
     const TAX_TYPE_LOCAL_TRANSFERRED = 4;
-    
+
     const STATE_AGUASCALIENTES = 'AGUASCALIENTES';
     const STATE_BAJA_CALIFORNIA = 'BAJA CALIFORNIA';
     const STATE_BAJA_CALIFORNIA_SUR = 'BAJA CALIFORNIA SUR';
