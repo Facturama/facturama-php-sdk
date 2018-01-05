@@ -26,9 +26,109 @@ class CfdiType
         'nameid' => 2,
         'value' => 'E',
     ];
+    const CFDI_TYPE_FEE = [
+        'name' => 'Honorarios',
+        'nameid' => 3,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PORTE_LETTER = [
+        'name' => 'Carta Porte',
+        'nameid' => 4,
+        'value' => 'T',
+    ];
+    const CFDI_TYPE_RESTAURANT_INVOICE = [
+        'name' => 'Factura para Restaurantes',
+        'nameid' => 5,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_GAS_STATION_INVOICE = [
+        'name' => 'Factura para Gasolineras',
+        'nameid' => 6,
+        'value' => 'I',
+    ];
     const CFDI_TYPE_INVOICE_WITH_TAX_WITHHOLDING = [
         'name' => 'Factura con Retención IVA',
         'nameid' => 7,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PHARMACY_INVOICE = [
+        'name' => 'Factura para Farmacias',
+        'nameid' => 8,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_DEDUCTIBLE_RECEIPT = [
+        'name' => 'Recibo Deducible',
+        'nameid' => 9,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_LEASE_RECEIPT = [
+        'name' => 'Recibo de Arrendamiento',
+        'nameid' => 10,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_SALE_NOTE = [
+        'name' => 'Nota de Venta',
+        'nameid' => 11,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_ESTIMATION_INVOICE = [
+        'name' => 'Factura de Estimación',
+        'nameid' => 12,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_SINGLE_ESTIMATION_INVOICE = [
+        'name' => 'Factura de Estimación Sencilla',
+        'nameid' => 13,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PAYMENT_SUPPLEMENT = [
+        'name' => 'Complemento de Pago',
+        'nameid' => 14,
+        'value' => 'P',
+    ];
+    const CFDI_TYPE_HOTEL_INVOICE = [
+        'name' => 'Factura para Hoteles',
+        'nameid' => 15,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PAYROLL_RECEIPT = [
+        'name' => 'Recibo de Nómina',
+        'nameid' => 16,
+        'value' => 'E',
+    ];
+    const CFDI_TYPE_IEPS_INVOICE = [
+        'name' => 'Factura con IEPS',
+        'nameid' => 17,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PAYMENT_RECEIPT = [
+        'name' => 'Recibo de Pago',
+        'nameid' => 18,
+        'value' => 'P',
+    ];
+    const CFDI_TYPE_SIMPLIFIED_ESTIMATION_INVOICE = [
+        'name' => 'Factura de Estimación Simplificada',
+        'nameid' => 19,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PARTIAL_CONSTRUCTION_SERVICE = [
+        'name' => 'Servicio Parcial de Construcción',
+        'nameid' => 20,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_INE_INVOICE = [
+        'name' => 'Factura INE',
+        'nameid' => 21,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_DETAILED_INVOICE = [
+        'name' => 'Factura Detallista',
+        'nameid' => 24,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_PUBLIC_NOTARIES_INVOICE = [
+        'name' => 'Factura para Notarios Publicos',
+        'nameid' => 25,
         'value' => 'I',
     ];
 
@@ -40,7 +140,27 @@ class CfdiType
     const CATALOG_CFDI_TYPE = [
         self::CFDI_TYPE_INVOICE,
         self::CFDI_TYPE_CREDIT_NOTE,
+        self::CFDI_TYPE_FEE,
+        self::CFDI_TYPE_PORTE_LETTER,
+        self::CFDI_TYPE_RESTAURANT_INVOICE,
+        self::CFDI_TYPE_GAS_STATION_INVOICE,
         self::CFDI_TYPE_INVOICE_WITH_TAX_WITHHOLDING,
+        self::CFDI_TYPE_PHARMACY_INVOICE,
+        self::CFDI_TYPE_DEDUCTIBLE_RECEIPT,
+        self::CFDI_TYPE_LEASE_RECEIPT,
+        self::CFDI_TYPE_SALE_NOTE,
+        self::CFDI_TYPE_ESTIMATION_INVOICE,
+        self::CFDI_TYPE_SINGLE_ESTIMATION_INVOICE,
+        self::CFDI_TYPE_PAYMENT_SUPPLEMENT,
+        self::CFDI_TYPE_HOTEL_INVOICE,
+        self::CFDI_TYPE_PAYROLL_RECEIPT,
+        self::CFDI_TYPE_IEPS_INVOICE,
+        self::CFDI_TYPE_PAYMENT_RECEIPT,
+        self::CFDI_TYPE_SIMPLIFIED_ESTIMATION_INVOICE,
+        self::CFDI_TYPE_PARTIAL_CONSTRUCTION_SERVICE,
+        self::CFDI_TYPE_INE_INVOICE,
+        self::CFDI_TYPE_DETAILED_INVOICE,
+        self::CFDI_TYPE_PUBLIC_NOTARIES_INVOICE,
     ];
 
     /**
