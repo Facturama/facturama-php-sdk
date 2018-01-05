@@ -28,45 +28,6 @@ class Client
     const API_URL = 'https://www.api.facturama.com.mx/api';
     const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
 
-    /**
-     * @see https://www.api.facturama.com.mx/api/catalogs/CfdiTypes
-     */
-    const INVOICE_TYPE_INCOME = 'I';
-    const INVOICE_TYPE_INCOME_TAX_WITHHOLDING = 'I';
-    const INVOICE_TYPE_OUTCOME = 'E';
-
-    /**
-     * @see https://www.api.facturama.com.mx/api/catalogs/PaymentMethods
-     */
-    const PAYMENT_METHOD_INITIAL = 'PIP';
-    const PAYMENT_METHOD_DEFERRED = 'PPD';
-    const PAYMENT_METHOD_SINGLE = 'PUE';
-
-    /**
-     * @see https://www.api.facturama.com.mx/api/catalogs/PaymentForms
-     */
-    const PAYMENT_FORM_CASH = '01';
-    const PAYMENT_FORM_NOMINAL_CHECK = '02';
-    const PAYMENT_FORM_TRANSFER = '03';
-    const PAYMENT_FORM_CREDIT_CARD = '04';
-    const PAYMENT_FORM_DIGITAL_WALLET = '05';
-    const PAYMENT_FORM_DIGITAL_MONEY = '06';
-    const PAYMENT_FORM_GROCERY_COUPON = '08';
-    const PAYMENT_FORM_DATION = '12';
-    const PAYMENT_FORM_SUBROGATION = '13';
-    const PAYMENT_FORM_CONSIGNMENT = '14';
-    const PAYMENT_FORM_CONDONATION = '15';
-    const PAYMENT_FORM_COMPENSATION = '17';
-    const PAYMENT_FORM_NOVATION = '23';
-    const PAYMENT_FORM_CONFUSION = '24';
-    const PAYMENT_FORM_DEBT_REMITTANCE = '25';
-    const PAYMENT_FORM_PRESCRIPTION = '26';
-    const PAYMENT_FORM_CREDITOR_SATISFACTION = '27';
-    const PAYMENT_FORM_DEBIT_CARD = '28';
-    const PAYMENT_FORM_SERVICE_CARD = '29';
-    const PAYMENT_FORM_INTERMEDIARIES = '31';
-    const PAYMENT_FORM_TO_BE_DEFINED = '99';
-
     const FILE_TYPE_PDF = 'pdf';
     const FILE_TYPE_HTML = 'html';
     const FILE_TYPE_XML = 'xml';
@@ -144,7 +105,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function get($path, array $params = [])
     {
@@ -158,7 +119,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function post($path, array $body = null, array $params = [])
     {
@@ -172,7 +133,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function put($path, array $body = null, array $params = [])
     {
@@ -185,7 +146,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function delete($path, array $params = [])
     {
@@ -201,7 +162,7 @@ class Client
      *
      * @throws \RuntimeException|\LogicException
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array The decoded JSON representation using `json_decode()`
      */
     private function executeRequest($method, $url, array $options = [])
     {
