@@ -24,33 +24,9 @@ use GuzzleHttp\RequestOptions;
  */
 class Client
 {
-    const VERSION = '1.0.0';
+    const VERSION = '2.0.0';
     const API_URL = 'https://www.api.facturama.com.mx/api';
-    const USER_AGENT = 'Facturama-PHP-SDK-v1.0.0';
-
-    const INVOICE_TYPE_INCOME = 'ingreso';
-    const INVOICE_TYPE_OUTCOME = 'egreso';
-    const INVOICE_TYPE_DELIVERY_NOTE = 'traslado';
-
-    const PAYMENT_METHOD_CASH = 'Efectivo';
-    const PAYMENT_METHOD_NOMINAL_CHECK = 'Cheque';
-    const PAYMENT_METHOD_TRANSFER = 'Transferencia';
-    const PAYMENT_METHOD_CREDIT_CARD = 'Tarjetas de crédito';
-    const PAYMENT_METHOD_DIGITAL_WALLET = 'Monederos electrónicos';
-    const PAYMENT_METHOD_DIGITAL_MONEY = 'Dinero electrónico';
-    const PAYMENT_METHOD_DIGITAL_CARD = 'Tarjetas digitales';
-    const PAYMENT_METHOD_GROCERY_COUPON = 'Vales de despensa';
-    const PAYMENT_METHOD_HOLDING = 'Bienes';
-    const PAYMENT_METHOD_SERVICE = 'Servicio';
-    const PAYMENT_METHOD_THIRD_PARTY = 'Por cuenta de tercero';
-    const PAYMENT_METHOD_DATION = 'Dación en pago';
-    const PAYMENT_METHOD_SUBROGATION = 'Pago por subrogación';
-    const PAYMENT_METHOD_CONSIGNMENT = 'Pago por consignación';
-    const PAYMENT_METHOD_CONDONATION = 'Condonación';
-    const PAYMENT_METHOD_CANCELLATION = 'Cancelación';
-    const PAYMENT_METHOD_COMPENSATION = 'Compensación';
-    const PAYMENT_METHOD_DOESNT_APPLY = 'NA';
-    const PAYMENT_METHOD_OTHER = 'Otros';
+    const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
 
     const FILE_TYPE_PDF = 'pdf';
     const FILE_TYPE_HTML = 'html';
@@ -60,11 +36,6 @@ class Client
     const RECEIPT_RECEIVED = 'received';
     const RECEIPT_ISSUED = 'issued';
 
-    const TAX_TYPE_FEDERAL_RETAINED = 1;
-    const TAX_TYPE_FEDERAL_TRANSFERRED = 2;
-    const TAX_TYPE_LOCAL_RETAINED = 3;
-    const TAX_TYPE_LOCAL_TRANSFERRED = 4;
-    
     const STATE_AGUASCALIENTES = 'AGUASCALIENTES';
     const STATE_BAJA_CALIFORNIA = 'BAJA CALIFORNIA';
     const STATE_BAJA_CALIFORNIA_SUR = 'BAJA CALIFORNIA SUR';
@@ -129,7 +100,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function get($path, array $params = [])
     {
@@ -143,7 +114,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function post($path, array $body = null, array $params = [])
     {
@@ -157,7 +128,7 @@ class Client
      * @param array|null $body
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function put($path, array $body = null, array $params = [])
     {
@@ -170,7 +141,7 @@ class Client
      * @param string $path
      * @param array $params
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array
      */
     public function delete($path, array $params = [])
     {
@@ -186,7 +157,7 @@ class Client
      *
      * @throws \RuntimeException|\LogicException
      *
-     * @return null|\stdClass
+     * @return null|\stdClass|array The decoded JSON representation using `json_decode()`
      */
     private function executeRequest($method, $url, array $options = [])
     {

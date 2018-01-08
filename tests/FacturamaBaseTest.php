@@ -13,6 +13,7 @@ namespace Facturama\Tests;
 
 use Facturama\Client;
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -20,8 +21,19 @@ use PHPUnit\Framework\TestCase;
  */
 class FacturamaBaseTest extends TestCase
 {
+    /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
+     * @var ClientInterface
+     */
+    private $customHttpClient;
+
     public function setUp()
     {
+        $this->client = new Client(getenv('api_username'), getenv('api_password'));
         $this->customHttpClient = $this->getMock(GuzzleClient::class, [], [], '', false);
     }
 
