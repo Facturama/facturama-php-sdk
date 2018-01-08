@@ -14,7 +14,7 @@ namespace Facturama\Model\Catalog;
 /**
  * @author Javier Spagnoletti <phansys@gmail.com>
  */
-class PaymentForm
+class PaymentForm implements CatalogInterface
 {
     const PAYMENT_FORM_CASH = [
         'name' => 'Efectivo',

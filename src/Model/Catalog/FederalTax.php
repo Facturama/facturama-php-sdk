@@ -14,7 +14,7 @@ namespace Facturama\Model\Catalog;
 /**
  * @author Javier Spagnoletti <phansys@gmail.com>
  */
-class FederalTax
+class FederalTax implements CatalogInterface
 {
     const FEDERAL_TAX_IEPS = [
         'name' => 'IEPS',

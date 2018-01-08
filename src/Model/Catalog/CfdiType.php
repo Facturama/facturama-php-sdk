@@ -14,7 +14,7 @@ namespace Facturama\Model\Catalog;
 /**
  * @author Javier Spagnoletti <phansys@gmail.com>
  */
-class CfdiType
+class CfdiType implements CatalogInterface
 {
     const CFDI_TYPE_INVOICE = [
         'name' => 'Factura',
@@ -184,14 +184,14 @@ class CfdiType
      *
      * @throws InvalidArgumentException
      *
-     * @return array The matching `CFDI_TYPE_*` constant for the given CFDI type value
+     * @return \Generator The matching `CFDI_TYPE_*` constants for the given CFDI type value
      */
     public static function findByValue($value)
     {
-        if (false === $index = array_search($value, array_column(self::CATALOG_CFDI_TYPE, 'value'), true)) {
-            throw new \InvalidArgumentException(sprintf('CFDI type with value "%s" was not found', $value));
+        foreach (self::CATALOG_CFDI_TYPE as $cfdiType) {
+            if ($cfdiType['value'] === $value) {
+                yield $cfdiType;
+            }
         }
-
-        return self::CATALOG_CFDI_TYPE[$index];
     }
 }

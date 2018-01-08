@@ -14,7 +14,7 @@ namespace Facturama\Model\Catalog;
 /**
  * @author Javier Spagnoletti <phansys@gmail.com>
  */
-class PaymentMethod
+class PaymentMethod implements CatalogInterface
 {
     const PAYMENT_METHOD_INITIAL = [
         'name' => 'Pago inicial y parcialidades',

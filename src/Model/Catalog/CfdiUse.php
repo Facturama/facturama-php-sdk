@@ -14,7 +14,7 @@ namespace Facturama\Model\Catalog;
 /**
  * @author Javier Spagnoletti <phansys@gmail.com>
  */
-class CfdiUse
+class CfdiUse implements CatalogInterface
 {
     const CFDI_USE_GOODS_ACQUISITION = [
         'name' => 'Adquisición de mercancias',
