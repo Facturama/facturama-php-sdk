@@ -53,7 +53,7 @@ class FederalTax implements CatalogInterface
     /**
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `FEDERAL_TAX_*` constant for the given federal tax name
      */
@@ -69,7 +69,7 @@ class FederalTax implements CatalogInterface
     /**
      * @param string $value
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `FEDERAL_TAX_*` constant for the given federal tax value
      */

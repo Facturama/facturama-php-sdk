@@ -133,7 +133,7 @@ class PaymentForm implements CatalogInterface
     /**
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `PAYMENT_FORM_*` constant for the given payment form name
      */
@@ -149,7 +149,7 @@ class PaymentForm implements CatalogInterface
     /**
      * @param string $value
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `PAYMENT_FORM_*` constant for the given payment form value
      */
