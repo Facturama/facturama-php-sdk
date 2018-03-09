@@ -182,7 +182,7 @@ class CfdiUse implements CatalogInterface
     /**
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `CFDI_USE_*` constant for the given CFDI use name
      */
@@ -198,7 +198,7 @@ class CfdiUse implements CatalogInterface
     /**
      * @param string $value
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `CFDI_USE_*` constant for the given CFDI use value
      */

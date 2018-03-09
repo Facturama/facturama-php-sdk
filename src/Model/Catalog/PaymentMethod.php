@@ -43,7 +43,7 @@ class PaymentMethod implements CatalogInterface
     /**
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `PAYMENT_METHOD_*` constant for the given payment method name
      */
@@ -59,7 +59,7 @@ class PaymentMethod implements CatalogInterface
     /**
      * @param string $value
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `PAYMENT_METHOD_*` constant for the given payment method value
      */

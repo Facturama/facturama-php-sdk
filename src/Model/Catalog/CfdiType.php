@@ -166,7 +166,7 @@ class CfdiType implements CatalogInterface
     /**
      * @param string $name
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return array The matching `CFDI_TYPE_*` constant for the given CFDI type name
      */
@@ -182,7 +182,7 @@ class CfdiType implements CatalogInterface
     /**
      * @param string $value
      *
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      *
      * @return \Generator The matching `CFDI_TYPE_*` constants for the given CFDI type value
      */
