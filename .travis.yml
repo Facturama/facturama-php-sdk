@@ -14,7 +14,7 @@ matrix:
     fast_finish: true
     allow_failures:
         - php: nightly
-        - php: hhvm-3.12
+        - php: hhvm-3.22
 
 before_script:
   - composer install

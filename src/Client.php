@@ -25,7 +25,7 @@ use GuzzleHttp\RequestOptions;
 class Client
 {
     const VERSION = '2.0.0';
-    const API_URL = 'https://www.api.facturama.com.mx/api';
+    const API_URL = 'https://api.facturama.mx';
     const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
 
     const FILE_TYPE_PDF = 'pdf';
