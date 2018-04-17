@@ -92,6 +92,10 @@ class PaymentForm implements CatalogInterface
         'name' => 'Tarjeta de servicios',
         'value' => '29',
     ];
+    const PAYMENT_FORM_APPLICATION_OF_ADVANCES = [
+        'name' => 'Aplicación de anticipos',
+        'value' => '30'
+    ];
     const PAYMENT_FORM_INTERMEDIARIES = [
         'name' => 'Intermediarios',
         'value' => '31',
@@ -126,6 +130,7 @@ class PaymentForm implements CatalogInterface
         self::PAYMENT_FORM_CREDITOR_SATISFACTION,
         self::PAYMENT_FORM_DEBIT_CARD,
         self::PAYMENT_FORM_SERVICE_CARD,
+        self::PAYMENT_FORM_APPLICATION_OF_ADVANCES,
         self::PAYMENT_FORM_INTERMEDIARIES,
         self::PAYMENT_FORM_TO_BE_DEFINED,
     ];

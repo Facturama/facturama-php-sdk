@@ -131,7 +131,21 @@ class CfdiType implements CatalogInterface
         'nameid' => 25,
         'value' => 'I',
     ];
-
+    const CFDI_TYPE_FOREIGN_TRADE = [
+        'name' => 'Factura Comercio Exterior',
+        'nameid' => 26,
+        'value' => 'I',
+    ];
+    const CFDI_TYPE_CREDIT_NOTE_FOREIGN_TRADE = [
+        'name' => 'Nota de Crédito Comercio Exterior',
+        'nameid' => 27,
+        'value' => 'E',
+    ];
+    const CFDI_TYPE_PORTE_LETTER_FOREIGN_TRADE = [
+        'name' => 'Carta Porte Comercio Exterior',
+        'nameid' => 28,
+        'value' => 'T',
+    ];
     /**
      * @var array
      *
@@ -161,6 +175,9 @@ class CfdiType implements CatalogInterface
         self::CFDI_TYPE_INE_INVOICE,
         self::CFDI_TYPE_DETAILED_INVOICE,
         self::CFDI_TYPE_PUBLIC_NOTARIES_INVOICE,
+        self::CFDI_TYPE_FOREIGN_TRADE,
+        self::CFDI_TYPE_CREDIT_NOTE_FOREIGN_TRADE,
+        self::CFDI_TYPE_PORTE_LETTER_FOREIGN_TRADE,
     ];
 
     /**

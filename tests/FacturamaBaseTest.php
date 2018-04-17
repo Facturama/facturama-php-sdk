@@ -34,7 +34,7 @@ class FacturamaBaseTest extends TestCase
     public function setUp()
     {
         $this->client = new Client(getenv('api_username'), getenv('api_password'));
-        $this->customHttpClient = $this->getMock(GuzzleClient::class, [], [], '', false);
+        $this->customHttpClient = $this->createMock(GuzzleClient::class);
     }
 
     public function testCreateContact()
@@ -44,10 +44,9 @@ class FacturamaBaseTest extends TestCase
 
     public function testCustomHttpClient()
     {
-        $client = $this->getMockBuilder(Client::class)
+        $this->client = $this->getMockBuilder(Client::class)
             ->setConstructorArgs([null, null, [], $this->customHttpClient])
-            ->getMock()
-        ;
+            ->getMock();
     }
 
     /**
@@ -56,9 +55,8 @@ class FacturamaBaseTest extends TestCase
      */
     public function testCustomHttpClientWithRequestOptions()
     {
-        $client = $this->getMockBuilder(Client::class)
+        $this->client = $this->getMockBuilder(Client::class)
             ->setConstructorArgs([null, null, ['verify' => false], $this->customHttpClient])
-            ->getMock()
-        ;
+            ->getMock();
     }
 }
