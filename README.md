@@ -2,38 +2,55 @@
 
 # Facturama SDK PHP
 
-This library requires PHP 5.5 as minimum
+Esta librería requiere PHP 5.5 como mínimo
 
-## How do I install it?
+## Instalación de librería
 
     composer require facturama/facturama-php-sdk=dev-master
 
-### Including the Lib
+### Incluyendo la librería
 
-It includes the library to your project
+Incluya la librería a su proyecto
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
 
-Start the development!
+Comience el desarrollo!
 
-### Create an instance of Facturama\Client class
+## Operaciones Web API
 
-Example:
+- Crear, Consultar Cancelar CFDI así como descargar XML, PDF y envió de
+   estos por mail.
+- Consultar Perfil y Suscripción actual
+- Carga de Logo y Certificados Digitales
+- CRUD de Productos, Clientes, Sucursales y Series.
+
+Algunos ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
+
+*Todas las operaciones son reflejadas en la plataforma web.*
+
+## Operaciones API Multiemisor
+
+- Crear, Consultar, Cancelar descarga de XML
+- CRUD de CSD (Certificados de los Sellos Digitales).
+
+Algunos ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
+*Las operaciones no se reflejan en la plataforma web.*
+
+### Crear una instancia de la clase Facturama\Client
+Ejemplo:
 ```php
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
 
-With this client you can start working, at this step your are ready to make API
-calls on behalf of the user.
-
-#### Making GET calls
+Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
+#### Hacer llamas GET
 ```php
 $params = [];
 $result = $facturama->get('Client', $params);
 ```
 
-#### Making POST calls
+#### Hacer llamadas POST
 ```php
 $params = [
   "Address" => [
@@ -54,7 +71,7 @@ $params = [
 $result = $facturama->post('Client', $params);
 ```
 
-#### Making PUT calls
+#### Hacer llamas PUT
 ```php
 $clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
 $body = [
@@ -78,7 +95,7 @@ $body = [
 $result = $facturama->put('Client/' . $clientId, $body);
 ```
 
-#### Making DELETE calls
+#### Hacer llamadas DELETE
 ```php
 $clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
 
