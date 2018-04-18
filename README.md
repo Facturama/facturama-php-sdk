@@ -6,7 +6,7 @@ This library requires PHP 5.5 as minimum
 
 ## How do I install it?
 
-    composer install facturama/facturama-php-sdk
+    composer require facturama/facturama-php-sdk=dev-master
 
 ### Including the Lib
 
