@@ -25,7 +25,7 @@ Comience el desarrollo!
 - Carga de Logo y Certificados Digitales
 - CRUD de Productos, Clientes, Sucursales y Series.
 
-Algunos ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
+Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Web)
 
 *Todas las operaciones son reflejadas en la plataforma web.*
 
@@ -34,7 +34,7 @@ Algunos ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/AP
 - Crear, Consultar, Cancelar descarga de XML
 - CRUD de CSD (Certificados de los Sellos Digitales).
 
-Algunos ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
+Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Multiemisor)
 *Las operaciones no se reflejan en la plataforma web.*
 
 ### Crear una instancia de la clase Facturama\Client
