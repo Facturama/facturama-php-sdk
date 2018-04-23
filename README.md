@@ -9,11 +9,6 @@ Esta librería requiere PHP 5.5 como mínimo
 
     composer require facturama/facturama-php-sdk:^2.0@dev
     
-### Crear una instancia de la clase Facturama\Client
-Ejemplo:
-```php
-$facturama = new \Facturama\Client('USER', 'PASSWORD');
-```
 
 ### Incluyendo la librería
 
@@ -21,7 +16,11 @@ Incluya la librería a su proyecto
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
-
+### Crear una instancia de la clase Facturama\Client
+Ejemplo:
+```php
+$facturama = new \Facturama\Client('USER', 'PASSWORD');
+```
 Comience el desarrollo!
 
 ## Operaciones Web API
