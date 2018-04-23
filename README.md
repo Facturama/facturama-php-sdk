@@ -1,3 +1,4 @@
+
 [![Build Status](https://travis-ci.org/Facturama/facturama-php-sdk.svg?branch=master)](https://travis-ci.org/Facturama/facturama-php-sdk)
 
 # Facturama SDK PHP
@@ -6,7 +7,7 @@ Esta librería requiere PHP 5.5 como mínimo
 
 ## Instalación de librería
 
-    composer require facturama/facturama-php-sdk=dev-master
+    composer require facturama/facturama-php-sdk:^2.0@dev
 
 ### Incluyendo la librería
 
@@ -44,71 +45,15 @@ $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
 
 Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
-#### Hacer llamadas GET
-```php
-$params = [];
-$result = $facturama->get('Client', $params);
-```
 
-#### Hacer llamadas POST
-```php
-$params = [
-  "Address" => [
-    "Street" => "St One ",
-    "ExteriorNumber" => "15",
-    "InteriorNumber" => "12",
-    "Neighborhood" => "Lower Manhattan, ",
-    "ZipCode" => "sample string 5",
-    "Locality" => "sample string 6",
-    "Municipality" => "sample string 7",
-    "State" => "sample string 8",
-    "Country" => "MX"
-  ],
-  "Rfc" => "XEXX010101000",
-  "Name" => "Test Test",
-  "Email" => "test@facturma.com"
-];
-$result = $facturama->post('Client', $params);
-```
 
-#### Hacer llamas PUT
-```php
-$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
-$body = [
-  "Id" => $clientId,
-  "Address" => [
-    "Street" => "St One",
-    "ExteriorNumber" => "15",
-    "InteriorNumber" => "12",
-    "Neighborhood" => "Lower Manhattan, ",
-    "ZipCode" => "sample string 5",
-    "Locality" => "sample string 6",
-    "Municipality" => "sample string 7",
-    "State" => "sample string 8",
-    "Country" => "MX"
-  ],
-  "Rfc" => "XEXX010101000",
-  "Name" => "Test Test 2",
-  "Email" => "test@facturma.com"
-];
+## Ejemplos
+No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos](https://github.com/facturama/facturama-php-sdk/tree/master/examples)
 
-$result = $facturama->put('Client/' . $clientId, $body);
-```
+## ¡Quiero contribuir!
+¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch tamático, escriba un código y agregue algunas pruebas para su nuevo código.
 
-#### Hacer llamadas DELETE
-```php
-$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
-
-$result = $facturama->delete('Client/' . $clientId);
-```
-
-## Examples
-Don't forget to check out our examples codes in the [examples](https://github.com/facturama/facturama-php-sdk/tree/master/examples) directory
-
-## I want to contribute!
-That is great! Just fork the project in GitHub, create a topic branch, write some code, and add some tests for your new code.
-
-Thanks for helping!
-
-## Contributing:
+¡Gracias por ayudar!
+## Contribuyendo:
 [phansys](https://github.com/phansys)
+
