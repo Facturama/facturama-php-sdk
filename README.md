@@ -8,6 +8,12 @@ Esta librería requiere PHP 5.5 como mínimo
 ## Instalación de librería
 
     composer require facturama/facturama-php-sdk:^2.0@dev
+    
+### Crear una instancia de la clase Facturama\Client
+Ejemplo:
+```php
+$facturama = new \Facturama\Client('USER', 'PASSWORD');
+```
 
 ### Incluyendo la librería
 
@@ -38,17 +44,11 @@ Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/
 Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Multiemisor)
 *Las operaciones no se reflejan en la plataforma web.*
 
-### Crear una instancia de la clase Facturama\Client
-Ejemplo:
-```php
-$facturama = new \Facturama\Client('USER', 'PASSWORD');
-```
-
 Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
 
 
 ## Ejemplos
-No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos](https://github.com/facturama/facturama-php-sdk/tree/master/examples)
+No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki)
 
 ## ¡Quiero contribuir!
 ¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch tamático, escriba un código y agregue algunas pruebas para su nuevo código.
