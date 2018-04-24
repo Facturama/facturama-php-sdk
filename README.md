@@ -1,97 +1,57 @@
+
 [![Build Status](https://travis-ci.org/Facturama/facturama-php-sdk.svg?branch=master)](https://travis-ci.org/Facturama/facturama-php-sdk)
 
 # Facturama SDK PHP
 
-This library requires PHP 5.5 as minimum
+Esta librería requiere PHP 5.5 como mínimo
 
-## How do I install it?
+## Instalación de librería
 
     composer require facturama/facturama-php-sdk:^2.0@dev
 
-### Including the Lib
+### Incluyendo la librería
 
-It includes the library to your project
+Incluya la librería a su proyecto
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
-
-Start the development!
-
-### Create an instance of Facturama\Client class
-
-Example:
+### Crear una instancia de la clase Facturama\Client
+Ejemplo:
 ```php
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
+¡Comience el desarrollo!
 
-With this client you can start working, at this step your are ready to make API
-calls on behalf of the user.
+## Operaciones Web API
 
-#### Making GET calls
-```php
-$params = [];
-$result = $facturama->get('Client', $params);
-```
+- Crear, Consultar Cancelar CFDI así como descargar XML, PDF y envió de
+   estos por mail.
+- Consultar Perfil y Suscripción actual
+- Carga de Logo y Certificados Digitales
+- CRUD de Productos, Clientes, Sucursales y Series.
 
-#### Making POST calls
-```php
-$params = [
-  "Address" => [
-    "Street" => "St One ",
-    "ExteriorNumber" => "15",
-    "InteriorNumber" => "12",
-    "Neighborhood" => "Lower Manhattan, ",
-    "ZipCode" => "sample string 5",
-    "Locality" => "sample string 6",
-    "Municipality" => "sample string 7",
-    "State" => "sample string 8",
-    "Country" => "MX"
-  ],
-  "Rfc" => "XEXX010101000",
-  "Name" => "Test Test",
-  "Email" => "test@facturma.com"
-];
-$result = $facturama->post('Client', $params);
-```
+Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Web)
 
-#### Making PUT calls
-```php
-$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
-$body = [
-  "Id" => $clientId,
-  "Address" => [
-    "Street" => "St One",
-    "ExteriorNumber" => "15",
-    "InteriorNumber" => "12",
-    "Neighborhood" => "Lower Manhattan, ",
-    "ZipCode" => "sample string 5",
-    "Locality" => "sample string 6",
-    "Municipality" => "sample string 7",
-    "State" => "sample string 8",
-    "Country" => "MX"
-  ],
-  "Rfc" => "XEXX010101000",
-  "Name" => "Test Test 2",
-  "Email" => "test@facturma.com"
-];
+*Todas las operaciones son reflejadas en la plataforma web.*
 
-$result = $facturama->put('Client/' . $clientId, $body);
-```
+## Operaciones API Multiemisor
 
-#### Making DELETE calls
-```php
-$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
+- Crear, Consultar, Cancelar descarga de XML
+- CRUD de CSD (Certificados de los Sellos Digitales).
 
-$result = $facturama->delete('Client/' . $clientId);
-```
+Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Multiemisor)
+*Las operaciones no se reflejan en la plataforma web.*
 
-## Examples
-Don't forget to check out our examples codes in the [examples](https://github.com/facturama/facturama-php-sdk/tree/master/examples) directory
+Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
 
-## I want to contribute!
-That is great! Just fork the project in GitHub, create a topic branch, write some code, and add some tests for your new code.
 
-Thanks for helping!
+## Ejemplos
+No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki)
 
-## Contributing:
+## ¡Quiero contribuir!
+¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch tamático, escriba un código y agregue algunas pruebas para su nuevo código.
+
+¡Gracias por ayudar!
+## Contribuyendo:
 [phansys](https://github.com/phansys)
+
