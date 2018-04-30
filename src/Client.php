@@ -116,8 +116,9 @@ class Client
      *
      * @return null|\stdClass|array
      */
-    public function post($path, array $body = null, array $params = [])
+    public function post($path, array $body = [], array $params = null)
     {
+
         return $this->executeRequest('POST', $path, [RequestOptions::JSON => $body, RequestOptions::QUERY => $params]);
     }
 
@@ -145,6 +146,7 @@ class Client
      */
     public function delete($path, array $params = [])
     {
+
         return $this->executeRequest('DELETE', $path, [RequestOptions::QUERY => $params]);
     }
 
@@ -161,7 +163,10 @@ class Client
      */
     private function executeRequest($method, $url, array $options = [])
     {
+
         try {
+
+            printf('%s/%s', self::API_URL, $url);
             $response = $this->client->request($method, sprintf('%s/%s', self::API_URL, $url), $options);
             $content = trim($response->getBody()->getContents());
         } catch (GuzzleRequestException $e) {

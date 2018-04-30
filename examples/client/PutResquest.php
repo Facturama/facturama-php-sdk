@@ -9,9 +9,9 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client(USER, PASSWORD);
+$facturama = new Facturama\Client("pruebas", "pruebas2011");
 
 $clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
 

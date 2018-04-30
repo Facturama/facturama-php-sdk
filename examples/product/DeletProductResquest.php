@@ -9,10 +9,11 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client(USER, PASSWORD);
+$facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
-$params = [];
-$result = $facturama->get('Client', $params);
+$productId = 'NIUOt3Pgd24ErcrM1OFyag2';
+
+$result = $facturama->delete('Product/'.$productId);
 printf('<pre>%s<pre>', var_export($result, true));
