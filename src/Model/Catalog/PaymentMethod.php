@@ -21,7 +21,7 @@ class PaymentMethod implements CatalogInterface
         'value' => 'PIP',
     ];
     const PAYMENT_METHOD_DEFERRED = [
-        'name' => 'Pago en parcialidades ó diferido',
+        'name' => 'Pago en parcialidades o diferido',
         'value' => 'PPD',
     ];
     const PAYMENT_METHOD_SINGLE = [
