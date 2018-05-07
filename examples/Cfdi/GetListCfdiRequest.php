@@ -11,15 +11,11 @@
 
 require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client('pruebas', 'pruebas2011');
-
-$CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
-
+$facturama = new Facturama\Client("pruebas", "pruebas2011");
 $params = [
-	'type' => 'issued'
+	'type' => 'issued',
+	'keyword' =>'Expresion en Software',
+	'status'=>'active'
 ];
-
-$result = $facturama->delete('Cfdi/'.$CfdiId, $params);
-
-
+$result = $facturama->get('/Cfdi', $params);
 printf('<pre>%s<pre>', var_export($result, true));
