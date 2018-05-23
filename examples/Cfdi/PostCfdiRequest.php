@@ -11,11 +11,11 @@
 
 require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client("pruebas", "pruebas2011");
+$facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
     'ExpeditionPlace' => '12345',
-    //'serie' => '',  
+    //'serie' => '',
     'Folio' => '100',
     'Currency' => 'MXN',
     'PaymentConditions' => 'CREDITO A SIETE DIAS',
@@ -28,7 +28,7 @@ $params = [
            'CfdiUse' => 'P01',
          ],
     'Items' => [
-       array(
+       [
             'ProductCode' => '10101504',
             'IdentificationNumber' => 'EDL',
             'Description' => 'Estudios de viabilidad',
@@ -39,22 +39,18 @@ $params = [
             'Subtotal' => 100.0,
 
             'Taxes' => [
-               array(
+               [
                    'Total' => 16.0,
                    'Name' => 'IVA',
                    'Base' => 100.0,
                    'Rate' => 0.16,
-                   'IsRetention' => False
-               ),
+                   'IsRetention' => false,
+               ],
             ],
             'Total' => 116.0,
-        ), 
+        ],
     ],
-
-
 ];
-
-
 
 $result = $facturama->post('2/cfdis', $params);
 

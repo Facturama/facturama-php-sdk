@@ -25,7 +25,7 @@ use GuzzleHttp\RequestOptions;
 class Client
 {
     const VERSION = '2.0.0';
-    const API_URL = 'https://apisandbox.facturama.mx';
+    const API_URL = 'https://api.facturama.mx';
     const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
 
     const FILE_TYPE_PDF = 'pdf';
@@ -75,6 +75,11 @@ class Client
     private $client;
 
     /**
+     * @var string
+     */
+    private $baseUri = self::API_URL;
+
+    /**
      * @param string $user
      * @param string $password
      * @param array $requestOptions
@@ -92,6 +97,18 @@ class Client
             RequestOptions::TIMEOUT => 60,
         ];
         $this->client = $httpClient ?: new GuzzleClient($requestOptions);
+    }
+
+    /**
+     * @param string $baseUri
+     *
+     * @return Client
+     */
+    public function setApiUrl($baseUri)
+    {
+        $this->baseUri = rtrim($baseUri, '/');
+
+        return $this;
     }
 
     /**
@@ -118,7 +135,6 @@ class Client
      */
     public function post($path, array $body = [], array $params = null)
     {
-
         return $this->executeRequest('POST', $path, [RequestOptions::JSON => $body, RequestOptions::QUERY => $params]);
     }
 
@@ -146,7 +162,6 @@ class Client
      */
     public function delete($path, array $params = [])
     {
-
         return $this->executeRequest('DELETE', $path, [RequestOptions::QUERY => $params]);
     }
 
@@ -163,11 +178,8 @@ class Client
      */
     private function executeRequest($method, $url, array $options = [])
     {
-
         try {
-
-            printf('%s/%s', self::API_URL, $url);
-            $response = $this->client->request($method, sprintf('%s/%s', self::API_URL, $url), $options);
+            $response = $this->client->request($method, sprintf('%s/%s', $this->baseUri, $url), $options);
             $content = trim($response->getBody()->getContents());
         } catch (GuzzleRequestException $e) {
             if ($e->hasResponse()) {

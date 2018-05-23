@@ -22,7 +22,7 @@ class PaymentFormTest extends FacturamaBaseTest
 {
     public function testPaymentFormApi()
     {
-        $this->assertNotEmpty(\stdClass::class, $this->client->get('catalogs/PaymentForms'));
+        $this->assertNotEmpty($this->client->get('catalogs/PaymentForms'));
     }
 
     /**

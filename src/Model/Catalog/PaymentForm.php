@@ -94,7 +94,7 @@ class PaymentForm implements CatalogInterface
     ];
     const PAYMENT_FORM_APPLICATION_OF_ADVANCES = [
         'name' => 'Aplicación de anticipos',
-        'value' => '30'
+        'value' => '30',
     ];
     const PAYMENT_FORM_INTERMEDIARIES = [
         'name' => 'Intermediarios',

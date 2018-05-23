@@ -22,7 +22,7 @@ class FederalTaxTest extends FacturamaBaseTest
 {
     public function testFederalTaxApi()
     {
-        $this->assertNotEmpty(\stdClass::class, $this->client->get('catalogs/FederalTaxes'));
+        $this->assertNotEmpty($this->client->get('catalogs/FederalTaxes'));
     }
 
     /**

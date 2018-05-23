@@ -22,7 +22,7 @@ class CfdiUseTest extends FacturamaBaseTest
 {
     public function testCfdiUseApi()
     {
-        $this->assertNotEmpty(\stdClass::class, $this->client->get('catalogs/CfdiUses'));
+        $this->assertNotEmpty($this->client->get('catalogs/CfdiUses'));
     }
 
     /**

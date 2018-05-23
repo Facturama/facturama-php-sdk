@@ -11,20 +11,19 @@
 
 require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client("pruebas", "pruebas2011");
+$facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $productId = 'NIUOt3Pgd24ErcrM1OFyag2';
 
-$Product= [
-  
+$Product = [
       'Id' => $productId,
       'Taxes' => [
-        array(
-      'Name'=> 'IVA',
-      'Rate'=> '0.16',
-      'IsRetention'=> 'false',
-       )],
-    
+        [
+      'Name' => 'IVA',
+      'Rate' => '0.16',
+      'IsRetention' => 'false',
+       ], ],
+
   'Unit' => 'Servicio',
   'UnitCode' => 'E48',
   'IdentificationNumber' => 'WEB003',

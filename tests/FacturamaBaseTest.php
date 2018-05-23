@@ -33,7 +33,9 @@ class FacturamaBaseTest extends TestCase
 
     public function setUp()
     {
+        parent::setUp();
         $this->client = new Client(getenv('api_username'), getenv('api_password'));
+        $this->client->setApiUrl('https://apisandbox.facturama.mx');
         $this->customHttpClient = $this->createMock(GuzzleClient::class);
     }
 
@@ -49,12 +51,10 @@ class FacturamaBaseTest extends TestCase
             ->getMock();
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessageRegExp /If argument 3 is provided, argument 4 must be omitted or passed with `null` as value/
-     */
     public function testCustomHttpClientWithRequestOptions()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessageRegExp('{If argument 3 is provided, argument 4 must be omitted or passed with `null` as value}');
         $this->client = $this->getMockBuilder(Client::class)
             ->setConstructorArgs([null, null, ['verify' => false], $this->customHttpClient])
             ->getMock();

@@ -1,27 +1,33 @@
 sudo: false
+dist: trusty
 language: php
 
 matrix:
     include:
-        # Use the newer stack for HHVM as HHVM does not support Precise anymore since a long time and so Precise has an outdated version
-        - php: hhvm-3.24
-          sudo: required
-          dist: trusty
+        - php: 5.6
+          env: COMPOSER_FLAGS="--prefer-lowest"
         - php: 5.6
         - php: 7.0
         - php: 7.1
         - php: 7.2
+        - php: nightly
+        - php: hhvm-3.24
+          sudo: required
     fast_finish: true
     allow_failures:
         - php: nightly
         - php: hhvm-3.24
 
 before_script:
-  - composer install
+  - composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
   - ./vendor/bin/phpunit -v -c phpunit.xml.dist
   - ./vendor/bin/phpmd src/ text phpmd.xml.dist
+  - |
+        CHANGED_FILES=$(git diff --name-only --diff-filter=ACMRTUXB "${TRAVIS_COMMIT_RANGE}")
+        if ! echo "${CHANGED_FILES}" | grep -qE "^(\\.php_cs(\\.dist)?|composer\\.lock)$"; then EXTRA_ARGS=$(printf -- '--path-mode=intersection\n--\n%s' "${CHANGED_FILES}"); else EXTRA_ARGS=''; fi
+        vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --dry-run --stop-on-violation --using-cache=no ${EXTRA_ARGS}
 
 cache:
   directories:
