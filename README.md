@@ -1,57 +1,62 @@
-
 [![Build Status](https://travis-ci.org/Facturama/facturama-php-sdk.svg?branch=master)](https://travis-ci.org/Facturama/facturama-php-sdk)
 
 # Facturama SDK PHP
 
-Esta librería requiere PHP 5.5 como mínimo
+[NOTE] This document is also available in [Spanish]
 
-## Instalación de librería
+This library requires PHP 5.5 as minimum
+
+## How do I install it?
 
     composer require facturama/facturama-php-sdk:^2.0@dev
 
-### Incluyendo la librería
+### Including the Lib
 
-Incluya la librería a su proyecto
+It includes the library to your project
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
-### Crear una instancia de la clase Facturama\Client
-Ejemplo:
+
+Start the development!
+
+### Create an instance of Facturama\Client class
+
+Example:
 ```php
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
-¡Comience el desarrollo!
 
-## Operaciones Web API
+With this client you can start working, at this step your are ready to make API
+calls on behalf of the user.
 
-- Crear, Consultar Cancelar CFDI así como descargar XML, PDF y envió de
-   estos por mail.
-- Consultar Perfil y Suscripción actual
-- Carga de Logo y Certificados Digitales
-- CRUD de Productos, Clientes, Sucursales y Series.
+## API operations
 
-Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Web)
+- Create, get, cancel CFDIs; download XMLs and PDFs and send them by email;
+- Check profile and current subscription;
+- Logo and digital certificates uploading;
+- CRUDs for Product, Customer, Branch office and series.
 
-*Todas las operaciones son reflejadas en la plataforma web.*
+*All operations will be reflected on Facturama's web app.*
 
-## Operaciones API Multiemisor
+## Mult-issuer API operations
 
-- Crear, Consultar, Cancelar descarga de XML
-- CRUD de CSD (Certificados de los Sellos Digitales).
+- Create, get, cancel CFDIs; download XMLs and PDFs;
+- CRUD for digital sign certificates ("CSD", "Certificados de los Sellos Digitales").
 
-Algunos ejemplos: [aquí](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki/API-Multiemisor)
-*Las operaciones no se reflejan en la plataforma web.*
+*These operations will not be reflected on Facturama's web app.*
 
-Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
+With this client you can start to work, in this step you're ready to make API calls on behalf of the user.
 
+## Examples
+Don't forget to check out our examples codes in the  [examples] directory
 
-## Ejemplos
-No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos](https://github.com/GilbertodelaCruz/facturama-php-sdk/wiki)
+## I want to contribute!
+That is great! Just fork the project in GitHub, create a topic branch, write some code, and add some tests for your new code.
 
-## ¡Quiero contribuir!
-¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch tamático, escriba un código y agregue algunas pruebas para su nuevo código.
+Thanks for helping!
 
-¡Gracias por ayudar!
-## Contribuyendo:
+## Contributing:
 [phansys](https://github.com/phansys)
 
+[Spanish]: ./README-es.md
+[examples]: ./examples/

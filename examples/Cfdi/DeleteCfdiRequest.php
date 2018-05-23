@@ -16,10 +16,9 @@ $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 $CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
 
 $params = [
-	'type' => 'issued'
+    'type' => 'issued',
 ];
 
 $result = $facturama->delete('Cfdi/'.$CfdiId, $params);
-
 
 printf('<pre>%s<pre>', var_export($result, true));

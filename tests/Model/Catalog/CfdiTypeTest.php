@@ -22,7 +22,7 @@ class CfdiTypeTest extends FacturamaBaseTest
 {
     public function testCfdiTypeApi()
     {
-        $this->assertNotEmpty(\stdClass::class, $this->client->get('catalogs/CfdiTypes'));
+        $this->assertNotEmpty($this->client->get('catalogs/CfdiTypes'));
     }
 
     /**
@@ -52,8 +52,9 @@ class CfdiTypeTest extends FacturamaBaseTest
 
             unset($cfdiTypes[$index]);
         }
-        // Los tipos del CFDI son dinamicamente asigandos desde la cuenta
-        //$this->assertEmpty($cfdiTypes);
+
+        $this->markTestIncomplete('CFDI types are tied to the configured account, so until there are a static test account, this check must be skipped');
+        $this->assertEmpty($cfdiTypes);
     }
 
     /**

@@ -11,7 +11,7 @@
 
 require __DIR__.'/../../vendor/autoload.php';
 
-$facturama = new Facturama\Client("pruebas", "pruebas2011");
+$facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
 
