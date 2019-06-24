@@ -25,30 +25,29 @@ $params = [
 	"ExpeditionPlace"=> "51873",
 	"Complemento"=> [
 		"Payments"=> [
-      [
-        "Date"=> "2018-10-04",
-        "PaymentForm"=> "03",
-        "Amount"=> "11142.21",
-        "RelatedDocuments"=> [
-          [
-            "Uuid"=> "C94C8AF3-C774-4D4C-802E-781411934A6E",
-            "Serie"=> "BQ",
-            "Folio"=> "2205",
-            "Currency"=> "USD",
-            "ExchangeRate"=> "19.2107",
-            "PaymentMethod"=> "PUE",
-            "PartialityNumber"=> "1",
-            "PreviousBalanceAmount"=> "1160.00",
-            "AmountPaid"=> "580.00",
-            "ImpSaldoInsoluto"=> "580.00"
-          ]
-        ]
-      ]
-    ]
+			[
+				"Date"=> "2018-10-04",
+				"PaymentForm"=> "03",
+				"Amount"=> "11142.21",
+				"RelatedDocuments"=> [
+					[
+						"Uuid"=> "C94C8AF3-C774-4D4C-802E-781411934A6E",
+						"Serie"=> "BQ",
+						"Folio"=> "2205",
+						"Currency"=> "USD",
+						"ExchangeRate"=> "19.2107",
+						"PaymentMethod"=> "PUE",
+						"PartialityNumber"=> "1",
+						"PreviousBalanceAmount"=> "1160.00",
+						"AmountPaid"=> "580.00",
+						"ImpSaldoInsoluto"=> "580.00"
+					]
+				]
+			]
+		]
 	]
 ];
-$params_api_lite=
-[
+$params_api_lite=[
 	"Issuer"=> [
 		"FiscalRegime"=> "601",
 		"Rfc"=> "AAA010101AAA",
@@ -64,25 +63,29 @@ $params_api_lite=
 	"Folio"=> "93",
 	"ExpeditionPlace"=> "76140",
 	"Complemento"=> [
-		"Payments"=> [[
-			"Date"=> "2018-10-04",
-			"PaymentForm"=> "03",
-			"Amount"=> "11142.21",
-			"RelatedDocuments"=> [[
-				"Uuid"=> "C94C8AF3-C774-4D4C-802E-781411934A6E",
-				"Serie"=> "BQ",
-				"Folio"=> "2205",
-				"Currency"=> "USD",
-				"ExchangeRate"=> "19.2107",
-				"PaymentMethod"=> "PUE",
-				"PartialityNumber"=> "1",
-				"PreviousBalanceAmount"=> "1160.00",
-				"AmountPaid"=> "580.00",
-				"ImpSaldoInsoluto"=> "580.00"
-			]]
-		]]
+		"Payments"=> [
+			[
+				"Date"=> "2018-10-04",
+				"PaymentForm"=> "03",
+				"Amount"=> "11142.21",
+				"RelatedDocuments"=> [
+					[
+						"Uuid"=> "C94C8AF3-C774-4D4C-802E-781411934A6E",
+						"Serie"=> "BQ",
+						"Folio"=> "2205",
+						"Currency"=> "USD",
+						"ExchangeRate"=> "19.2107",
+						"PaymentMethod"=> "PUE",
+						"PartialityNumber"=> "1",
+						"PreviousBalanceAmount"=> "1160.00",
+						"AmountPaid"=> "580.00",
+						"ImpSaldoInsoluto"=> "580.00"
+					]
+				]
+			]
+		]
 	]
-      ];
+];
 
 /*
 //cfdi complemento de pago
