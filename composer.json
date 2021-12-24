@@ -1,5 +1,5 @@
 {
-    "name": "facturama/facturama-php-sdk",
+    "name": "rafael_dx/facturama-php-sdk",
     "description": "Facturama PHP SDK",
     "keywords": ["API", "PHP", "JSON", "Facturama"],
     "license": "MIT",
