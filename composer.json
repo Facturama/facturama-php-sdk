@@ -4,7 +4,7 @@
     "keywords": ["API", "PHP", "JSON", "Facturama"],
     "license": "MIT",
     "type": "library",
-    "homepage": "https://www.api.facturama.com.mx/",
+    "homepage": "https://apisandbox.facturama.mx/",
     "support": {
         "issues": "https://github.com/Facturama/facturama-php/issues"
     },
