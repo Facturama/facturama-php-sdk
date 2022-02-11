@@ -55,4 +55,4 @@ No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos]
 [phansys](https://github.com/phansys)
 
 [Inglés]: ./README.md
-[ejemplos]: ./examples/
+[ejemplos]: ./wiki/
