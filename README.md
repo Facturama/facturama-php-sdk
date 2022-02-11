@@ -59,4 +59,4 @@ Thanks for helping!
 [phansys](https://github.com/phansys)
 
 [Spanish]: ./README-es.md
-[examples]: ./examples/
+[examples]: ./wiki/
