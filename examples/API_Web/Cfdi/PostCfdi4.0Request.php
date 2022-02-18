@@ -9,12 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../../vendor/autoload.php';
+require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
-    'ExpeditionPlace' => '12345',
+    'ExpeditionPlace' => '78140',
     //'serie' => '',
     'Folio' => '100',
     'Currency' => 'MXN',
@@ -26,6 +26,7 @@ $params = [
            'Rfc' => 'XAXX010101000',
            'Name' => 'RADIAL SOFTWARE SOLUTIONS',
            'CfdiUse' => 'P01',
+           ''=>''
          ],
     'Items' => [
        [
@@ -51,7 +52,7 @@ $params = [
         ],
     ],
 ];
-
-$result = $facturama->post('2/cfdis', $params);
+//CFDI 4.0
+$result = $facturama->post('4/cfdis', $params);
 
 printf('<pre>%s<pre>', var_export($result, true));
