@@ -37,6 +37,7 @@ calls on behalf of the user.
 - CRUDs for Product, Customer, Branch office and series.
 
 *All operations will be reflected on Facturama's web app.*
+
 Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
 
 ## Mult-issuer API operations
@@ -47,7 +48,8 @@ Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-We
 *These operations will not be reflected on Facturama's web app.*
 
 With this client you can start to work, in this step you're ready to make API calls on behalf of the user.
-Some examples: [here](hhttps://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
+
+Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
 
 
 ## I want to contribute!
