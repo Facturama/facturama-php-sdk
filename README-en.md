@@ -60,5 +60,5 @@ Thanks for helping!
 ## Contributing:
 [phansys](https://github.com/phansys)
 
-[Spanish]: ./README-es.md
+[Spanish]: ./README.md
 [examples]: ./examples/
