@@ -54,5 +54,5 @@ No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos]
 ## Contribuyendo:
 [phansys](https://github.com/phansys)
 
-[Inglés]: ./README.md
+[Inglés]: ./README-en.md
 [ejemplos]: ./examples/
