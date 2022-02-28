@@ -1,13 +1,17 @@
 
 [![Build Status](https://travis-ci.org/Facturama/facturama-php-sdk.svg?branch=master)](https://travis-ci.org/Facturama/facturama-php-sdk)
 
-# Facturama SDK PHP
+# Facturama PHP SDK 
 
-[NOTA] La versión original de este documento está disponible en [inglés]
+[NOTE] This document is also available in [English]
+
+Libreria para consumir la API Web y API Multiemisor de [Facturama](https://api.facturama.mx/).
+
+## Inicio Rapido
 
 Esta librería requiere PHP 5.5 como mínimo
 
-## Instalación de librería
+### Instalación
 
     composer require facturama/facturama-php-sdk:^2.0@dev
 
@@ -22,7 +26,6 @@ Ejemplo:
 ```php
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
-¡Comience el desarrollo!
 
 ## Operaciones Web API
 
@@ -43,16 +46,12 @@ $facturama = new \Facturama\Client('USER', 'PASSWORD');
 
 Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
 
-
-## Ejemplos
-No olvide consultar nuestros ejemplos de códigos en el directorio de [ejemplos]
-
 ## ¡Quiero contribuir!
-¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch tamático, escriba un código y agregue algunas pruebas para su nuevo código.
+¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch, escriba un código y agregue algunas pruebas para su nuevo código.
 
 ¡Gracias por ayudar!
 ## Contribuyendo:
 [phansys](https://github.com/phansys)
 
-[Inglés]: ./README-en.md
+[English]: ./README-en.md
 [ejemplos]: ./examples/
