@@ -5,6 +5,7 @@
  *
  * (c) Facturama <dev@facturama.com>
  *
+ *
  * This source file is subject to a MIT license that is bundled
  * with this source code in the file LICENSE.
  */
@@ -14,20 +15,34 @@ require __DIR__.'/../../../vendor/autoload.php';
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
-    'ExpeditionPlace' => '78140',
-    //'serie' => '',
+    'Serie' => 'A',
     'Folio' => '100',
-    'Currency' => 'MXN',
+    'Date' => '2022-03-30',
+    'PaymentForm' => '01',
     'PaymentConditions' => 'CREDITO A SIETE DIAS',
+    'Currency' => 'MXN',
     'CfdiType' => 'I',
-    'PaymentForm' => '03',
     'PaymentMethod' => 'PUE',
-    'Receiver' => [
-           'Rfc' => 'XAXX010101000',
-           'Name' => 'RADIAL SOFTWARE SOLUTIONS',
-           'CfdiUse' => 'P01',
-           ''=>''
-         ],
+    'ExpeditionPlace' => '78140',
+    'Receiver' =>
+    [
+        'Rfc'=> 'URE180429TM6',
+        'CfdiUse'=> 'G03',
+        'Name'=> 'UNIVERSIDAD ROBOTICA ESPAÑOLA',
+        'FiscalRegime'=> '603',
+        'TaxZipCode' => '65000',
+        'Address'=>
+        [
+            'Street' => 'Guadalcazar del receptor',
+            'ExteriorNumber' => '300',
+            'InteriorNumber' => 'A',
+            'Neighborhood'=> 'Las lomas',
+            'ZipCode' => '65000',
+            'Municipality' => 'San Luis Potosi',
+            'State' => 'San Luis Potosi',
+            'Country' => 'México'
+        ]
+    ],
     'Items' => [
        [
             'ProductCode' => '10101504',
@@ -38,7 +53,7 @@ $params = [
             'UnitPrice' => 50.0,
             'Quantity' => 2.0,
             'Subtotal' => 100.0,
-
+            "ObjetoImp" => "02",
             'Taxes' => [
                [
                    'Total' => 16.0,
@@ -52,7 +67,7 @@ $params = [
         ],
     ],
 ];
-//CFDI 4.0
-$result = $facturama->post('4/cfdis', $params);
+//CFDI 4.0 - Tipo Ingreso
+$result = $facturama->post('3/cfdis', $params);
 
 printf('<pre>%s<pre>', var_export($result, true));
