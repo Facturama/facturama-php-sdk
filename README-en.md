@@ -2,17 +2,33 @@
 
 # Facturama SDK PHP
 
-[NOTE] This document is also available in [Spanish]
+>[NOTA] Este documento esta disponible en [Español].
+>
+>Library to consume the Web API and Multiissuer API of [Facturama](https://api.facturama.mx/).
+>
+>Check the Facturama guide [here](https://apisandbox.facturama.mx/guias).
+
+## Dependencies
 
 This library requires PHP 5.5 as minimum
 
-## How do I install it?
+## Create user account
 
+> Create a user account in [Sandbox](https://dev.facturama.mx/api/login) environment.
+>
+> For WEB API, use the RFC  "EKU9003173C9" to make tests, more information [here](https://apisandbox.facturama.mx/guias/perfil-fiscal).
+>
+> Digital stamp certificates (CSDs), more information [here](https://apisandbox.facturama.mx/guias/conocimientos/sellos-digitales-pruebas). 
+
+
+## How do I install it?
+```sh
     composer require facturama/facturama-php-sdk:^2.0@dev
+```
 
 ### Including the Lib
 
-It includes the library to your project
+It includes the library to your project.
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
@@ -26,8 +42,11 @@ Example:
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
 
-With this client you can start working, at this step your are ready to make API
-calls on behalf of the user.
+## Web API 
+
+> Make CFDIs by using one issuer.
+>
+> *All operations will be reflected on Facturama's web app.*
 
 ## API operations
 
@@ -36,20 +55,22 @@ calls on behalf of the user.
 - Logo and digital certificates uploading;
 - CRUDs for Product, Customer, Branch office and series.
 
-*All operations will be reflected on Facturama's web app.*
+Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web).
 
-Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
+
+## Mult-issuer API
+
+> make CFDIs by using multiple issuers.
+>
+> *These operations will NOT be reflected on Facturama's web app.*
+
 
 ## Mult-issuer API operations
 
 - Create, get, cancel CFDIs; download XMLs and PDFs;
 - CRUD for digital sign certificates ("CSD", "Certificados de los Sellos Digitales").
 
-*These operations will not be reflected on Facturama's web app.*
-
-With this client you can start to work, in this step you're ready to make API calls on behalf of the user.
-
-Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
+Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor).
 
 
 ## I want to contribute!
