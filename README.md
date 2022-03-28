@@ -3,17 +3,31 @@
 
 # Facturama PHP SDK 
 
-[NOTE] This document is also available in [English]
+>[NOTE] This document is also available in [English]
+>
+>Libreria para consumir la API Web y API Multiemisor de [Facturama](https://api.facturama.mx/).
+>
+>Puedes consultar la guía completa de la [API](https://apisandbox.facturama.mx/guias).
 
-Libreria para consumir la API Web y API Multiemisor de [Facturama](https://api.facturama.mx/).
+## Crear cuenta de usuario
+
+> Crear una cuenta de usuario en el ambiente de prueba [Sandbox](https://dev.facturama.mx/api/login) 
+>
+> Para API Web, realiza la configuración básica usando RFC de pruebas **"EKU9003173C9"**, más información [aquí](https://apisandbox.facturama.mx/guias/perfil-fiscal).
+>
+> Sellos digitales de prueba (CSD), [aquí](https://apisandbox.facturama.mx/guias/conocimientos/sellos-digitales-pruebas). 
 
 ## Inicio Rapido
+
+### Dependencias
 
 Esta librería requiere PHP 5.5 como mínimo
 
 ### Instalación
 
+```sh
     composer require facturama/facturama-php-sdk:^2.0@dev
+```
 
 ### Incluyendo la librería
 
@@ -26,6 +40,11 @@ Ejemplo:
 ```php
 $facturama = new \Facturama\Client('USER', 'PASSWORD');
 ```
+## API Web
+
+> Creación de CFDIs con un único emisor, (el propietario de la cuenta, cuyo perfil fiscal se tiene configurado)
+> 
+> *Todas las operaciones son reflejadas en la plataforma web.*
 
 ## Operaciones Web API
 
@@ -35,16 +54,22 @@ $facturama = new \Facturama\Client('USER', 'PASSWORD');
 - Carga de Logo y Certificados Digitales;
 - CRUD de Productos, Clientes, Sucursales y Series.
 
-*Todas las operaciones son reflejadas en la plataforma web.*
+Ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
+
+
+## API Multiemisor
+
+> Creacion de CFDIs con multiples emisores.
+>
+> *Las operaciones NO se reflejan en la plataforma web.*
 
 ## Operaciones API Multiemisor
 
 - Crear, Consultar, Cancelar descarga de XML
 - CRUD de CSD (Certificados de los Sellos Digitales).
 
-*Las operaciones no se reflejan en la plataforma web.*
+Ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multiemisor)
 
-Con este cliente puedes comenzar a trabajar, en este paso estás listo para hacer  llamadas a la API en nombre del usuario.
 
 ## ¡Quiero contribuir!
 ¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch, escriba un código y agregue algunas pruebas para su nuevo código.
