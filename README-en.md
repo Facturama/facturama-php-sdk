@@ -60,7 +60,7 @@ Some examples: [here](https://github.com/Facturama/facturama-php-sdk/wiki/API-We
 
 ## Mult-issuer API
 
-> make CFDIs by using multiple issuers.
+> Make CFDIs by using multiple issuers.
 >
 > *These operations will NOT be reflected on Facturama's web app.*
 
