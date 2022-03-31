@@ -24,13 +24,13 @@ use GuzzleHttp\RequestOptions;
  */
 class Client
 {
-    const VERSION = '2.0.0';
+    const VERSION = '2.0.1';
     /*
     https://apisandbox.facturama.mx //Pruebas desarrollo
     https://api.facturama.mx  //Produccion
     */
     const API_URL = 'https://apisandbox.facturama.mx/';
-    const USER_AGENT = 'Facturama-PHP-SDK-v2.0.0';
+    const USER_AGENT = 'Facturama-PHP-SDK-v2.0.1';
 
     const FILE_TYPE_PDF = 'pdf';
     const FILE_TYPE_HTML = 'html';

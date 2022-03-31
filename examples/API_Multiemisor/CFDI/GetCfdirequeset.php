@@ -9,11 +9,12 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../../vendor/autoload.php';
+require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
-$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
+$CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
 
-$result = $facturama->delete('Client/'.$clientId);
+$result = $facturama->get('api-lite/cfdis/'.$CfdiId);
+
 printf('<pre>%s<pre>', var_export($result, true));

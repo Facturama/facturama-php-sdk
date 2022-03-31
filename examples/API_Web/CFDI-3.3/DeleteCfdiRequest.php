@@ -9,16 +9,16 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../../vendor/autoload.php';
+require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
-$body = [];
+
+$CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
+
 $params = [
-'cfdiType' => 'issued',
-'cfdiId' => '7eo51BvzV-E16gBx3nnxfQ2',
-'email' => 'fernandazub28@gmail.com',
+    'type' => 'issued',
 ];
 
-$result = $facturama->post('Cfdi', $body, $params);
+$result = $facturama->delete('Cfdi/'.$CfdiId, $params);
 
 printf('<pre>%s<pre>', var_export($result, true));

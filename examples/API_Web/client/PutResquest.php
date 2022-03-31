@@ -9,13 +9,16 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../../vendor/autoload.php';
+require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
-$params = [
+$clientId = 'TGpJ_Ko32_ZSEPBcZXRnRw2';
+
+$body = [
+  'Id' => $clientId,
   'Address' => [
-    'Street' => 'St One ',
+    'Street' => 'St One',
     'ExteriorNumber' => '15',
     'InteriorNumber' => '12',
     'Neighborhood' => 'Lower Manhattan, ',
@@ -26,9 +29,10 @@ $params = [
     'Country' => 'MX',
   ],
   'Rfc' => 'XEXX010101000',
-  'Name' => 'Test Test',
+  'Name' => 'Test Test 2',
   'Email' => 'test@facturma.com',
 ];
-$result = $facturama->post('Client', $params);
+
+$result = $facturama->put('Client/'.$clientId, $body);
 
 printf('<pre>%s<pre>', var_export($result, true));
