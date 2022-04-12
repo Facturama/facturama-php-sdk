@@ -13,14 +13,6 @@ require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
-$CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
-
-$params = [
-    'type' => 'issued',
-    'motive'=>'01',
-    'uuidReplacement'=>'null'
-];
-
-$result = $facturama->delete('Cfdi/'.$CfdiId, $params);
-
+$params = [];
+$result = $facturama->get('api/BranchOffice', $params);
 printf('<pre>%s<pre>', var_export($result, true));
