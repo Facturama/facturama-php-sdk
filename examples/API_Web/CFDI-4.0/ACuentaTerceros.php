@@ -10,14 +10,14 @@
  * with this source code in the file LICENSE.
  */
 
-require __DIR__.'/../../../vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
     'Serie' => 'A',
     'Folio' => '100',
-    'Date' => '2022-03-30',
+    'Date' => null,
     'PaymentForm' => '01',
     'PaymentConditions' => 'CREDITO A SIETE DIAS',
     'Currency' => 'MXN',
@@ -53,7 +53,15 @@ $params = [
             'UnitPrice' => 50.0,
             'Quantity' => 2.0,
             'Subtotal' => 100.0,
-            "TaxObject" => "02",
+            'ThirdPartyAccount'=>
+            [
+                'Rfc'=>'CACX7605101P8',
+                'Name'=>'XOCHILT CASAS CHAVEZ',
+                'FiscalRegime'=>'616',
+                'TaxZipCode'=>'10740'
+            ],
+            'PropertyTaxIDNumber'=>['123456789'],
+            'TaxObject' => '02',
             'Taxes' => [
                [
                    'Total' => 16.0,
@@ -67,7 +75,7 @@ $params = [
         ],
     ],
 ];
-//CFDI 4.0 - Tipo Ingreso
+//CFDI 4.0 - Tipo Ingreso a cuenta de terceros
 $result = $facturama->post('3/cfdis', $params);
 
 printf('<pre>%s<pre>', var_export($result, true));
