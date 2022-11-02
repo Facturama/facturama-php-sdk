@@ -5,7 +5,7 @@
 
 >[NOTE] This document is also available in [English]
 >
->Libreria para consumir la API Web y API Multiemisor de [Facturama](https://api.facturama.mx/).
+>Librería para consumir la API Web y API Multiemisor de [Facturama](https://api.facturama.mx/).
 >
 >Puedes consultar la guía completa de la [API](https://apisandbox.facturama.mx/guias).
 
@@ -15,9 +15,9 @@
 >
 > Para API Web, realiza la configuración básica usando RFC de pruebas **"EKU9003173C9"**, más información [aquí](https://apisandbox.facturama.mx/guias/perfil-fiscal).
 >
-> Sellos digitales de prueba (CSD), [aquí](https://apisandbox.facturama.mx/guias/conocimientos/sellos-digitales-pruebas). 
+> Sellos Digitales de prueba (CSD), [aquí](https://apisandbox.facturama.mx/guias/conocimientos/sellos-digitales-pruebas). 
 
-## Inicio Rapido
+## Inicio Rápido
 
 ### Dependencias
 
@@ -31,7 +31,7 @@ Esta librería requiere PHP 5.5 como mínimo
 
 ### Incluyendo la librería
 
-Incluya la librería a su proyecto
+Incluye la librería a tu proyecto
 ```php
 require __DIR__.'/vendor/autoload.php';
 ```
@@ -48,8 +48,8 @@ $facturama = new \Facturama\Client('USER', 'PASSWORD');
 
 ## Operaciones Web API
 
-- Crear, Consultar Cancelar CFDI así como descargar XML, PDF y envío de
-  estos por mail;
+- Crear, Consultar y Cancelar CFDI, así como descargar XML, PDF y envío de
+  éstos por e-mail;
 - Consultar Perfil y Suscripción actual;
 - Carga de Logo y Certificados Digitales;
 - CRUD de Productos, Clientes, Sucursales y Series.
@@ -59,7 +59,7 @@ Ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Web)
 
 ## API Multiemisor
 
-> Creacion de CFDIs con multiples emisores.
+> Creación de CFDIs con múltiples emisores.
 >
 > *Las operaciones NO se reflejan en la plataforma web.*
 
@@ -72,7 +72,7 @@ Ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multie
 
 
 ## ¡Quiero contribuir!
-¡Eso es genial! Simplemente haga un fork del proyecto en GitHub, cree un branch, escriba un código y agregue algunas pruebas para su nuevo código.
+¡Genial! Simplemente realiza un fork del proyecto en GitHub, crea un branch, escribe un código y agregua algunas pruebas para tu nuevo código.
 
 ¡Gracias por ayudar!
 ## Contribuyendo:
