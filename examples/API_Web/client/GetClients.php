@@ -13,7 +13,11 @@ require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
-$productId = 'NIUOt3Pgd24ErcrM1OFyag2';
-
-$result = $facturama->delete('Product/'.$productId);
+$params = 
+    [
+    'search'=>'',
+    'start'=>'0',
+    'length'=>'100'
+    ];
+$result = $facturama->get('Clients', $params);
 printf('<pre>%s<pre>', var_export($result, true));

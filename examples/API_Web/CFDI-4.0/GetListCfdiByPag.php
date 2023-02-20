@@ -12,15 +12,23 @@
 require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
-
-$CfdiId = 'sniJoQdMCaa1c3M_7TLjIQ2';
-
 $params = [
-    'type' => 'issued',
-    'motive'=>'01',
-    'uuidReplacement'=>'null'
-];
-
-$result = $facturama->delete('Cfdi/'.$CfdiId, $params);
-
+    'type'=>'issued',
+    'folioStart'=>'',
+    'folioEnd'=>'',
+    'rfc'=>'',
+    'dateStart'=>'',
+    'dateEnd'=>'',
+    'status'=>'all',
+    'OrderNumber'=>'',
+    'taxEntityName'=>'',
+    'idBranch'=>'',
+    'serie'=>'',
+    'id'=>'',
+    'invoiceType'=>'',
+    'paymentMethod'=>'',
+    'rfcIssuer'=>'',
+    'page'=>'0',
+    ];
+$result = $facturama->get('/Cfdi', $params);
 printf('<pre>%s<pre>', var_export($result, true));

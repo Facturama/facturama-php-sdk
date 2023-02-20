@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  * This source file is subject to a MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -23,9 +23,11 @@ $params = [
     'PaymentForm' => '03',
     'PaymentMethod' => 'PUE',
     'Receiver' => [
-           'Rfc' => 'XAXX010101000',
-           'Name' => 'RADIAL SOFTWARE SOLUTIONS',
-           'CfdiUse' => 'P01',
+        'Rfc'=> 'URE180429TM6',
+        'CfdiUse'=> 'G03',
+        'Name'=> 'UNIVERSIDAD ROBOTICA ESPAÑOLA',
+        'FiscalRegime'=> '603',
+        'TaxZipCode' => '65000',
          ],
     'Items' => [
        [
@@ -37,7 +39,6 @@ $params = [
             'UnitPrice' => 50.0,
             'Quantity' => 2.0,
             'Subtotal' => 100.0,
-
             'Taxes' => [
                [
                    'Total' => 16.0,

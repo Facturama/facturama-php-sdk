@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  * This source file is subject to a MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -16,7 +16,7 @@ $body = [];
 $params = [
 'cfdiType' => 'issued',
 'cfdiId' => '7eo51BvzV-E16gBx3nnxfQ2',
-'email' => 'fernandazub28@gmail.com',
+'email' => 'ejemplo@ejemplo.com',
 ];
 
 $result = $facturama->post('Cfdi', $body, $params);

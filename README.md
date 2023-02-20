@@ -48,7 +48,8 @@ $facturama = new \Facturama\Client('USER', 'PASSWORD');
 
 ## Operaciones Web API
 
-- Crear, Consultar y Cancelar CFDI así como descargar XML, PDF y envío de
+
+- Crear, Consultar y Cancelar CFDI, así como descargar XML, PDF y envío de
   éstos por e-mail;
 - Consultar Perfil y Suscripción actual;
 - Carga de Logo y Certificados Digitales;
@@ -72,7 +73,8 @@ Ejemplos: [aquí](https://github.com/Facturama/facturama-php-sdk/wiki/API-Multie
 
 
 ## ¡Quiero contribuir!
-¡Eso es genial! Simplemente raliza un fork del proyecto en GitHub, crea un branch, escribe un código y agrega algunas pruebas para tu nuevo código.
+
+¡Genial! Simplemente realiza un fork del proyecto en GitHub, crea un branch, escribe un código y agregua algunas pruebas para tu nuevo código.
 
 ¡Gracias por ayudar!
 ## Contribuyendo:
