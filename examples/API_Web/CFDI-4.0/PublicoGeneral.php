@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  *
  * This source file is subject to a MIT license that is bundled
@@ -25,7 +25,7 @@ $params=
 
   "Receiver"=> [
     "Rfc"=> "XAXX010101000",
-    "Name"=> "PUBLICO GENERAL",
+    "Name"=> "PúBLICO EN GENERAL",
     "CfdiUse"=> "S01",
     "TaxZipCode"=> "78140",
     "FiscalRegime"=>"616"
@@ -55,7 +55,7 @@ $params=
     ]
   ]
 ];
-//CFDI 4.0 - Tipo Ingreso
+//CFDI 4.0 - Tipo Ingreso como Factura a Publico en General
 $result = $facturama->post('3/cfdis', $params);
 
 printf('<pre>%s<pre>', var_export($result, true));

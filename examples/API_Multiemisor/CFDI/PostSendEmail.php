@@ -12,8 +12,16 @@
 require __DIR__.'/../../../vendor/autoload.php';
 
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
+$body = [];
+$params = [
+'cfdiType' => 'issuedLite',
+'cfdiId' => 'zDNrtSAUBl08mjCn44GnEg2',
+'email' => 'tu_correo@tu_dominio.com',
+'subject'=>'',
+'comments'=>'',
+'issuedEmail'=>'correo_emisor@ejemplo.com'
+];
 
-$productId = 'NIUOt3Pgd24ErcrM1OFyag2';
+$result = $facturama->post('Cfdi', $body, $params);
 
-$result = $facturama->delete('Product/'.$productId);
 printf('<pre>%s<pre>', var_export($result, true));

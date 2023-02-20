@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  *
  * This source file is subject to a MIT license that is bundled

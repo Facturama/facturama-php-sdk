@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  * This source file is subject to a MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -14,16 +14,20 @@ require __DIR__.'/../../../vendor/autoload.php';
 $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
-    "CfdiType"=> "I",
+
+    "Serie"=>"A",
     "NameId"=> "1",
-    "Folio"=> "100",
-    "ExpeditionPlace"=> "78140",
-    "PaymentForm"=> "01",
-    "Date"=> null,
-    "PaymentAccountNumber"=> "6789",
+    "Folio"=> "999",
+    "CfdiType"=> "I",
     "Currency"=> "MXN",
-    "PaymentConditions"=> "Condiciones",
+    "PaymentForm"=> "01",
     "PaymentMethod"=> "PUE",
+    "Exportation"=> "01",
+    "Date"=> null,
+    "ExpeditionPlace"=> "78140",
+    "OrderNumber"=> "TEST-001",
+    "PaymentAccountNumber"=> "6789",
+    "PaymentConditions"=> "Condiciones",
     "Issuer" =>
     [
         "Rfc"=> "URE180429TM6",
@@ -76,7 +80,6 @@ $params = [
      ],
     "LogoUrl"=> "https://www.ejemplos.co/wp-content/uploads/2015/11/Logo-Chanel.jpg",
     "Observations"=> "Este es un ejemplo de observaciones",
-    "OrderNumber"=> "123321",
     "PaymentBankName"=> "BBVA"
 ];
 

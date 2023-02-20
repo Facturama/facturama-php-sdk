@@ -3,7 +3,7 @@
 /*
  * This file is part of Facturama PHP SDK.
  *
- * (c) Facturama <chucho@facturama.mx> <rafael@facturama.mx>
+ * (c) Facturama <soporte-api@facturama.mx>
  *
  * This source file is subject to a MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -15,9 +15,9 @@ $facturama = new Facturama\Client('pruebas', 'pruebas2011');
 
 $params = [
 	"Receiver"=> [
-		"Name"=> "SERVICIOS ADMINISTRATIVOS AXKAN DEL BAJIO S.C",
+		"Name"=> "UNIVERSIDAD ROBOTICA ESPAÑOLA'",
 		"CfdiUse"=> "P01",
-		"Rfc"=> "XEXX010101000"
+		"Rfc"=> "URE180429TM6"
 	],
 	"CfdiType"=> "P",
 	"NameId"=> "1",
